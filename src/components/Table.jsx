@@ -1,7 +1,93 @@
+
+export const Orders = [
+    {
+      orderId: "ABC123",
+      status: "Delivered",
+      transactionId: "XYZ789",
+      refundDate: null,
+      orderAmount: 100.50
+    },
+    {
+      orderId: "DEF456",
+      status: "Processing",
+      transactionId: "UVW123",
+      refundDate: null,
+      orderAmount: 75.25
+    },
+    {
+      orderId: "GHI789",
+      status: "Shipped",
+      transactionId: "LMN456",
+      refundDate: "2024-02-20",
+      orderAmount: 50.75
+    },
+    {
+      orderId: "JKL012",
+      status: "Pending",
+      transactionId: "OPQ789",
+      refundDate: null,
+      orderAmount: 120.00
+    },
+    {
+      orderId: "MNO345",
+      status: "Delivered",
+      transactionId: "RST012",
+      refundDate: "2024-02-15",
+      orderAmount: 90.60
+    },
+    {
+      orderId: "PQR678",
+      status: "Processing",
+      transactionId: "FGH234",
+      refundDate: null,
+      orderAmount: 85.75
+    },
+    {
+      orderId: "STU901",
+      status: "Shipped",
+      transactionId: "IJK567",
+      refundDate: null,
+      orderAmount: 110.25
+    },
+    {
+      orderId: "VWX234",
+      status: "Delivered",
+      transactionId: "YZA890",
+      refundDate: "2024-02-18",
+      orderAmount: 150.30
+    },
+    {
+      orderId: "BCD567",
+      status: "Pending",
+      transactionId: "CDE901",
+      refundDate: null,
+      orderAmount: 60.40
+    },
+    {
+      orderId: "EFG890",
+      status: "Processing",
+      transactionId: "HIJ234",
+      refundDate: "2024-02-10",
+      orderAmount: 200.00
+    }
+  ];
+
+  
+
 export function Table() {
+    console.log(Orders)
   return (
+    
     <div>
-      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div>
+      <div className="font-bold text-lg pt-6 pb-3">Transactions | This Month </div>
+      <div className="flex pt-4">
+      <button type="button" className="text-gray-900 bg-gray-100   border border-gray-300 focus:outline-none hover:bg-gray-100  font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 " >Payout (22)</button>
+      <button type="button" className="text-white-900 bg-blue-400 border border-gray-300 focus:outline-none hover:bg-gray-100  font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 " >Refund (6)</button>
+      </div>
+      
+    </div>
+      <div class="relative  shadow-md lg  ">
         <table class="w-full text-sm text-left rtl:text-right ">
           <caption class="p-5 text-lg font-semibold text-left rtl:text-right bg-white ">
             <div className="flex justify-between ">
@@ -55,36 +141,37 @@ export function Table() {
           <thead class="text-xs text-gray-700 uppercase bg-slate-100">
             <tr>
               <th scope="col" class="px-6 py-3">
-                Product name
+                Order ID
               </th>
               <th scope="col" class="px-6 py-3">
-                Color
+                Status
               </th>
               <th scope="col" class="px-6 py-3">
-                Category
+               Transction ID
               </th>
               <th scope="col" class="px-6 py-3">
-                Price
+                Refund Date
               </th>
               <th scope="col" class="px-6 py-3">
-                <span class="sr-only">Edit</span>
+                Amount 
               </th>
             </tr>
           </thead>
           <tbody>
+            { Orders.map(order =>
             <tr class="bg-white border-b  dark:border-gray-700">
               <th scope="row" class="px-6 py-4 font-medium  whitespace-nowrap ">
-                Apple MacBook Pro 17"
+              {order.orderId}
               </th>
-              <td class="px-6 py-4">Silver</td>
-              <td class="px-6 py-4">Laptop</td>
-              <td class="px-6 py-4">$2999</td>
-              <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium  hover:underline">
-                  Edit
-                </a>
+              <td class="px-6 py-4">{order.status}</td>
+              <td class="px-6 py-4">{order.transactionId}</td>
+              <td class="px-6 py-4">{order.refundDate}</td>
+              <td class="px-6 py-4 ">
+            {order.orderAmount}
               </td>
             </tr>
+                )
+            }
           </tbody>
         </table>
       </div>

@@ -1,17 +1,28 @@
-import { AmountProcessedCard } from "./components/AmountProcessed"
-import { Appbar } from "./components/AppBar"
-import { PayloadCard } from "./components/PayloadCard"
-import { RevenueCard } from "./components/Revenue_card"
+
+import { AppBar } from "./components/AppBar"
+import { Table } from "./components/Table"
+import { Overview } from "./components/overview"
+import Sidebar from "./components/sideBar"
+
 
 function App() {
   return (
-    <div className=""> 
 
- <Appbar />
-       {/* <PayloadCard className="grid-span-1" title={"Next Payload"} OrderCount={"23"} amount={"93292.32"} time={"Today, 4:00PM"} paymentdate={"Next Payment Date:"}  />
-      <RevenueCard className=""title={"Amount Pending "} OrderCount={"14"} amount={"40000"} />
-      <AmountProcessedCard title={"Amount Processed "}  amount={"40000"}  /> */}
+    <div className="bg-white-50">
+      <Sidebar />
+      <div className="border-b border-black-150 sm:pl-64 bg-white-500">
+        <AppBar />
+      </div>
+
+      <div className=" m-5 mb-0 sm:ml-64 grid gap-8">
+      <Overview />
+      <div className="grid gap-6">
+    <Table/>
     </div>
+
+      </div>
+    </div>  
+   
   )
 }
 
