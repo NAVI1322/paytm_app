@@ -1,5 +1,6 @@
 # PayTM clone App 
-## Using Tailwing 
+## Using Tailwind
+
 
 - learning Flex and Grid
 - component Structures
